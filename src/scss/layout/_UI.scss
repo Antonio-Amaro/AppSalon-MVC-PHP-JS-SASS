@@ -1,0 +1,67 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app{
+    @include m.tablet{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .imagen{
+        height: 20rem;
+        background-image: url(../img/eugene-chystiakov-taZSJ6xmt48-unsplash.jpg);
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet{
+            height: auto;
+        }
+    }
+
+    .app{
+        width: 95%;
+        margin: 0 auto;
+        padding: 0 0 3rem 0;
+
+        @include m.tablet {
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: darken(v.$grisOscuro, 10%) #393e4600;   
+        }
+    }   
+}
+
+.barra {
+    width: 95%;
+    margin: 3rem auto 4rem auto;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    span {
+        color: v.$azul;
+        font-weight: v.$semiBold;
+    }
+    .boton {
+        @include m.boton(v.$grisOscuro, v.$blanco);
+        margin: 0;
+    }
+}
+
+.barra-servicios {
+    margin-bottom: v.$separacion;
+
+    @include m.notebook {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    .boton {
+        margin: 0 0 1rem 0;
+        font-weight: v.$regular;
+    }
+}

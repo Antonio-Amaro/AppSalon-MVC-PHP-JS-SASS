@@ -1,0 +1,64 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.citas {
+    list-style: none;
+    padding: 0;
+
+    li {
+        padding: 1rem;
+        border-top: 1px solid v.$blanco;
+
+        .citas-datos {
+            flex-direction: column;
+            
+            @include m.tablet {
+                display: flex;
+                flex-direction: row;
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                line-height: 0;
+            }
+        }
+
+        p {
+            // font-weight: v.$bold;
+            color: v.$azul;
+        }
+
+        p .total {
+            color: v.$azul;
+        }
+
+        span,
+        .servicio {
+            font-weight: v.$regularBold;
+            color: v.$blanco;
+        }
+
+        .boton-eliminar {
+            font-weight: v.$regular;
+        }
+    }
+}
+
+.servicios {
+    @extend .citas;
+
+    .acciones {
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+    .boton,
+    .boton-eliminar {
+        margin: 0;
+        width: auto;
+        font-weight: v.$regular;
+
+        &.actual{
+            background-color: v.$blanco;
+            color: v.$azul;
+        }
+    }
+}

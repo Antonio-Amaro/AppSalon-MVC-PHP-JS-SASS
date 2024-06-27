@@ -27,8 +27,8 @@ class Email{
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->setFrom('ja.antonioamaro@gmail.com');
+        $mail->addAddress($this->email);
         $mail->Subject = 'Confirma tu cuenta';
 
         // Set HTML

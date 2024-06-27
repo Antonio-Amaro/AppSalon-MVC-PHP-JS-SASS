@@ -22,6 +22,7 @@
     <div id="paso-2" class="seccion">
         <h2>Tus datos y cita</h2>
         <p class="text-center">Coloca tus datos y fecha de tu cita</p>
+        <p class="text-center">*Laboramos Lunes a Viernes: 9:00 am - 6:00 pm</p>
         
         <form class="formulario">
             <div class="campo">

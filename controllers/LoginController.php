@@ -23,7 +23,7 @@ class LoginController{
                 if($usuario) {
                     // Verificar el password
                     if( $usuario->comprobarPasswordAndConfirmado($auth->password, $auth->confirmado) ) {
-                        session_start();
+                        iniciarSesion();
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre . " " . $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
@@ -56,7 +56,7 @@ class LoginController{
     }
 
     public static function logout(){
-        session_start();
+        iniciarSesion();
 
         $_SESSION = [];
 
